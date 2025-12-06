@@ -1,6 +1,7 @@
 import BG from "./components/BG";
 import Title from "./components/Title";
 import Header from "./components/Header";
+import MyCards from "./components/MyCards";
 export default function Home() {
   return (
     <div className="relative min-h-screen overflow-hidden">
@@ -12,6 +13,7 @@ export default function Home() {
        <Title/>
       </main>
        <Header/>
+       <MyCards/>
     </div>
   );
 }
