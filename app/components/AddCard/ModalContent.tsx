@@ -1,5 +1,9 @@
 import React, { useState } from "react";
 import { X } from "lucide-react";
+import { StorageManager } from "../localStorage/storageFun";
+
+
+const storage=new StorageManager("Quotly");
 
 // Props
 interface ModalContentProps {
@@ -14,15 +18,22 @@ export default function ModalContent({ titles, onSave, onClose }: ModalContentPr
   const [selectedTitle, setSelectedTitle] = useState("");
   const [subtitle, setSubtitle] = useState("");
 
+
+const handleSave = (data: { title: string; subtitle: string }) => {
+  storage.addItem(data.title, data.subtitle, new Date());
+  console.log("Saved:", storage.getItems());
+  onClose();
+};
+
   const filteredTitles = titles.filter((t) =>
     t.toLowerCase().includes(search.toLowerCase())
   );
 
-  const handleSave = () => {
-    if (!selectedTitle || !subtitle) return;
-    onSave({ title: selectedTitle, subtitle });
-    onClose();
-  };
+//   const handleSave = () => {
+//     if (!selectedTitle || !subtitle) return;
+//     onSave({ title: selectedTitle, subtitle });
+//     onClose();
+//   };
 
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-black/40 backdrop-blur-sm z-50">
@@ -89,7 +100,7 @@ export default function ModalContent({ titles, onSave, onClose }: ModalContentPr
 
         {/* Save Button */}
         <button
-          onClick={handleSave}
+          onClick={()=>handleSave({title:selectedTitle,subtitle})}
           className="w-full bg-black text-white py-6 rounded-2xl text-3xl font-semibold hover:opacity-80 transition"
         >
           Save
