@@ -1,6 +1,6 @@
 "use client";
 
-import Aurora from "./Aurora";
+import Aurora from "./libraryHelperFunc/Aurora";
 
 export default function BG() {
   return (

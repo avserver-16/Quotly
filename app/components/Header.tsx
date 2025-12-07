@@ -1,4 +1,4 @@
-import GridMotion from "./GridMotion";
+import GridMotion from "./libraryHelperFunc/GridMotion";
 
 export default function Header() {
     return <GridMotion

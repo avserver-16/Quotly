@@ -2,7 +2,7 @@
 import React from 'react';
 import { gsap } from 'gsap';
 
-import '../globals.css';
+import '../../globals.css';
 
 interface MenuItemProps {
   link: string;

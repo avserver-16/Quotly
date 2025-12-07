@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useRef, FC, ReactNode } from 'react';
 import { gsap } from 'gsap';
-import '../globals.css';
+import '../../globals.css';
 
 // interface GridMotionProps {
 //     items?: (string | ReactNode)[];

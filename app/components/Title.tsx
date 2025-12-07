@@ -1,4 +1,4 @@
-import ScrambledText from "./ScrambledText";
+import ScrambledText from "./libraryHelperFunc/ScrambledText";
 
 export default function Title() {
     return (

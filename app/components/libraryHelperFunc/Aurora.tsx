@@ -2,7 +2,7 @@
 import { useEffect, useRef } from 'react';
 import { Renderer, Program, Mesh, Color, Triangle } from 'ogl';
 
-import '../globals.css';
+import '../../globals.css';
 
 const VERT = `#version 300 es
 in vec2 position;

@@ -1,4 +1,5 @@
-import FlowingMenu from "./FlowingMenu";
+import FlowingMenu from "./libraryHelperFunc/FlowingMenu";
+
 export default function MyCards() {
     const demoItems = [
 
