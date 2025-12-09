@@ -4,19 +4,29 @@ import Title from "./components/Title";
 import Header from "./components/Header";
 import MyCards from "./components/MyCards";
 import StickyButton from "./components/AddCard/StickyButton";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Modal from "./components/AddCard/Modal";
 import ModalContent from "./components/AddCard/ModalContent";
+import { Options } from "./components/localStorage/storageFun";
+import Cards from "./components/AddCard/Card";
 export default function Home() {
   const [showModal, setShowModal] = useState(false);
+
+  const [titles, setTitles] = useState<string[]>([]);
+
+  useEffect(() => {
+    const opt = new Options();
+    setTitles(opt.getTitleOptions());   
+  }, [showModal]);
+
   return (
     <div className="relative min-h-screen overflow-hidden">
       {/* Background Layer */}
       <Modal open={showModal} onClose={() => { }}
         children={
-          <ModalContent titles={["Avish", "Ram"]}
-            onSave={() => {setShowModal(prev=>!prev) }}
-            onClose={() => {setShowModal(prev=>!prev)}} />}
+          <ModalContent titles={titles}
+            onSave={() => { setShowModal(prev => !prev) }}
+            onClose={() => { setShowModal(prev => !prev) }} />}
       />
       <BG />
       {/* Foreground Content */}
@@ -31,6 +41,7 @@ export default function Home() {
         }
         console.log(showModal)
       }} />
+      {/* <Cards title="Avish" subtitle="Avish Again!!!"/> */}
     </div>
   );
 }

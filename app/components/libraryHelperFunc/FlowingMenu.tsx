@@ -7,7 +7,8 @@ import '../../globals.css';
 interface MenuItemProps {
   link: string;
   text: string;
-//   image: string;
+  subtitles: string
+  //   image: string;
 }
 
 interface FlowingMenuProps {
@@ -26,7 +27,7 @@ const FlowingMenu: React.FC<FlowingMenuProps> = ({ items = [] }) => {
   );
 };
 
-const MenuItem: React.FC<MenuItemProps> = ({ link, text }) => {
+const MenuItem: React.FC<MenuItemProps> = ({ link, text, subtitles }) => {
   const itemRef = React.useRef<HTMLDivElement>(null);
   const marqueeRef = React.useRef<HTMLDivElement>(null);
   const marqueeInnerRef = React.useRef<HTMLDivElement>(null);
@@ -79,15 +80,20 @@ const MenuItem: React.FC<MenuItemProps> = ({ link, text }) => {
     return Array.from({ length: 4 }).map((_, idx) => (
       <React.Fragment key={idx}>
         <span>{text}</span>
+        <span>{subtitles}</span>
+
         {/* <div className="marquee__img" style={{ backgroundImage: `url(${image})` }} /> */}
       </React.Fragment>
     ));
-  }, [text]);
+  }, [text, subtitles]);
 
   return (
     <div className="menu__item" ref={itemRef}>
       <a className="menu__item-link" href={link} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-        {text}
+          {text}{'\n'}
+          {/* {subtitles} */}
+        <p>
+      { subtitles}</p>
       </a>
       <div className="marquee" ref={marqueeRef}>
         <div className="marquee__inner-wrap" ref={marqueeInnerRef}>
