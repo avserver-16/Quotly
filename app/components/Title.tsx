@@ -11,7 +11,7 @@ export default function Title() {
                 duration={1.2}
                 speed={0.9}
                 scrambleChars=".:"
-                style={{ fontSize: "124px" }}   // ← Bigger
+                style={{ fontSize: "124px",fontWeight:100 }}   // ← Bigger
             >
                 Quotly
             </ScrambledText>

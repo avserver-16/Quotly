@@ -79,7 +79,7 @@ const ScrambledText: React.FC<ScrambledTextProps> = ({
 
   return (
     <div ref={rootRef} className={`text-block ${className}`} style={style}>
-      <p>{children}</p>
+      <p style={{fontWeight:100}}>{children}</p>
     </div>
   );
 };

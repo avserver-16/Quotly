@@ -8,7 +8,6 @@ import { useEffect, useState } from "react";
 import Modal from "./components/AddCard/Modal";
 import ModalContent from "./components/AddCard/ModalContent";
 import { Options } from "./components/localStorage/storageFun";
-import Cards from "./components/AddCard/Card";
 export default function Home() {
   const [showModal, setShowModal] = useState(false);
 

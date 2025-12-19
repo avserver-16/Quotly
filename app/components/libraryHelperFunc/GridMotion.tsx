@@ -83,7 +83,7 @@ const GridMotion: FC<GridMotionProps> = ({ items = [], gradientColor = 'transpar
                 }}
             >
                 <div className="gridMotion-container">
-                    {Array.from({ length: 3 }, (_, rowIndex) => (
+                    {Array.from({ length: 5 }, (_, rowIndex) => (
                         <div
                             key={rowIndex}
                             className="row"
@@ -98,8 +98,8 @@ const GridMotion: FC<GridMotionProps> = ({ items = [], gradientColor = 'transpar
                                 return (
                                     <div key={itemIndex} className="row__item">
                                         <div className="card-glass">
-                                            <h3 className="card-title">{item?.title}</h3>
-                                            <p className="card-subtitle">{item?.subtitle}</p>
+                                            <h3 className="card-title" style={{fontWeight:300,fontSize:48}}>{item?.title}</h3>
+                                            <p className="card-subtitle" style={{fontWeight:100,fontSize:24}}>{item?.subtitle}</p>
                                         </div>
                                     </div>
                                 );

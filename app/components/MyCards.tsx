@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from "react";
 import ModernCard from "./AddCard/Card";
 import { StorageManager,Item } from "./localStorage/storageFun";
+import StickyClearButton from "./ClearStorage";
 export default function MyCards() {
   const [items, setItems] = useState<Item[]>([]);
 
@@ -25,12 +26,13 @@ export default function MyCards() {
       ) : (
         items.map((item, index) => (
           <ModernCard
-            key={index}
-            title={item.title}
-            subtitle={item.subtitle}
+          key={index}
+          title={item.title}
+          subtitle={item.subtitle}
           />
         ))
       )}
+      <StickyClearButton/>
     </div>
   );
 }
