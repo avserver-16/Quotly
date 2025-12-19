@@ -1,9 +1,9 @@
+import StickyClearButton from "./ClearStorage";
 import ScrambledText from "./libraryHelperFunc/ScrambledText";
 
 export default function Title() {
     return (
         <div style={{ display: "flex", flexDirection: "row", gap: 20, justifyContent: 'space-between' }}>
-
             {/* BIG TITLE */}
             <ScrambledText
                 className="scrambled-text-demo"
@@ -11,8 +11,8 @@ export default function Title() {
                 duration={1.2}
                 speed={0.9}
                 scrambleChars=".:"
-                style={{ fontSize: "124px" }}   // ← Bigger
-            >
+                style={{ fontSize: "124px",fontWeight:100 }}   // ← Bigger
+                >
                 Quotly
             </ScrambledText>
 
@@ -25,7 +25,7 @@ export default function Title() {
                     speed={0.9}
                     scrambleChars=".:"
                     style={{ fontSize: "32px" }}   // ← Smaller
-                >
+                    >
                     Home
                 </ScrambledText>
                 </button>
@@ -36,11 +36,12 @@ export default function Title() {
                     speed={0.9}
                     scrambleChars=".:"
                     style={{ fontSize: "32px" }}   // ← Smaller
-                >
+                    >
                     My Cards
                 </ScrambledText>
                 </button>
             </div>
+            {/* <StickyClearButton/> */}
         </div>
     );
 }

@@ -22,6 +22,8 @@ export default function ModalContent({ titles, onSave, onClose }: ModalContentPr
 const handleSave = (data: { title: string; subtitle: string }) => {
   storage.addItem(data.title, data.subtitle, new Date());
   console.log("Saved:", storage.getItems());
+  window.location.reload();
+  onSave(data);
   onClose();
 };
 
