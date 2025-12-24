@@ -19,7 +19,7 @@ export default function Home() {
   }, [showModal]);
 
   return (
-    <div className="relative min-h-screen overflow-hidden">
+    <div className="relative min-h-screen overflow-x-hidden">
       {/* Background Layer */}
       <Modal open={showModal} onClose={() => { }}
         children={
