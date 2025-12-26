@@ -603,3 +603,15 @@
     gap: 12px;
   }
 }
+.footer {
+  width: 100%;
+  padding: 16px 0;
+  background-color: #111;
+  color: #fff;
+  text-align: center;
+  font-size: 14px;
+}
+
+.footer p {
+  margin: 0;
+}
